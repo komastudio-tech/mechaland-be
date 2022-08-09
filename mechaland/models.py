@@ -1,0 +1,93 @@
+from django.db import models
+import uuid
+import datetime
+
+# Create your models here.
+# HOME
+class HeroImage(models.Model):
+    id = models.UUIDField( 
+         primary_key = True, 
+         default = uuid.uuid4, 
+         editable = False)
+    text = models.CharField(max_length=500)
+    buy_text = models.CharField(max_length=500)
+    image = models.FileField(upload_to='back-end-image/HeroImage/', blank = True)
+
+    class Meta:
+        managed = True
+        db_table = 'hero-image'
+
+    def __str__(self) -> str:
+        return self.text
+
+class FeaturedCollection(models.Model):
+    id = models.UUIDField( 
+         primary_key = True, 
+         default = uuid.uuid4, 
+         editable = False)
+    text = models.CharField(max_length=500)
+    buy_text = models.CharField(max_length=500)
+    image = models.FileField(upload_to='back-end-image/FeaturedCollection/', blank = True)
+
+    class Meta:
+        managed = True
+        db_table = 'featured-collection'
+
+    def __str__(self) -> str:
+        return self.text
+
+#GROUP-BUY
+class Product(models.Model):
+    id = models.UUIDField( 
+         primary_key = True, 
+         default = uuid.uuid4, 
+         editable = False)
+    title = models.CharField(max_length=100, blank=False)
+    description = models.CharField(max_length=500, blank=False, verbose_name='Description')
+    specs = models.CharField(max_length=500, blank=False, verbose_name='Specs')
+    price = models.IntegerField()
+    stock = models.IntegerField()
+    category = models.CharField(max_length=100, blank=False)
+
+    class Meta:
+        managed = True
+        db_table = 'product'
+        unique_together=('category', 'title')
+
+    def __str__(self) -> str:
+        return self.title
+
+class ProductImage(models.Model):
+    id = models.UUIDField( 
+         primary_key = True, 
+         default = uuid.uuid4, 
+         editable = False)
+    name = models.CharField(max_length=500, blank=False)
+    image = models.FileField(upload_to='back-end-image/ProductImage/', blank = True)
+    ranking = models.IntegerField()
+    product = models.ForeignKey(Product, related_name='list_photos', on_delete=models.CASCADE)
+
+    class Meta:
+        ordering = ('ranking', )
+        managed = True
+        db_table = 'product-image'
+
+    def __str__(self) -> str:
+        return self.name
+
+class InterestCheck(models.Model):
+    id = models.UUIDField( 
+         primary_key = True, 
+         default = uuid.uuid4, 
+         editable = False)
+    title = models.CharField(max_length=200, blank=False)
+    text = models.CharField(max_length=1000, blank=False)
+    created_at = models.DateField(default=datetime.date.today)
+    image = models.FileField(upload_to='back-end-image/ProductImage/', blank = True)
+
+    class Meta:
+        managed = True
+        db_table = 'interest-check'
+
+    def __str__(self) -> str:
+        return self.name
