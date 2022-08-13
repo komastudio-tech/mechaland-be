@@ -70,6 +70,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -77,6 +78,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'api.wsgi.application'
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'back-end-image/')
+MEDIA_URL = '/back-end-image/'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases

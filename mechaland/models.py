@@ -83,7 +83,7 @@ class InterestCheck(models.Model):
     title = models.CharField(max_length=200, blank=False)
     text = models.CharField(max_length=1000, blank=False)
     created_at = models.DateField(default=datetime.date.today)
-    image = models.FileField(upload_to='back-end-image/ProductImage/', blank = True)
+    image = models.FileField(upload_to='back-end-image/InterestCheck/', blank = True)
 
     class Meta:
         managed = True

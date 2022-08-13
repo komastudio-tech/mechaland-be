@@ -14,8 +14,21 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
+from django.conf.urls.static import static
+from django.conf import settings
+from rest_framework import routers
+
+from mechaland import views as apiViews
+
+router = routers.DefaultRouter()
+router.register('products', apiViews.ProductViewSet)
+router.register('productimage', apiViews.ProductImageViewSet)
+# router.register('featured_collection', apiViews.FeaturedCollectionViewSet)
+router.register('interestcheck', apiViews.InterestCheckViewSet)
+# router.register('hero_image', apiViews.HeroImageViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+    path('api/v1/', include(router.urls)),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
