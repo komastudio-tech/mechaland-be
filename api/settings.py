@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'rest_framework',
     'mechaland',
+    'authadmin',
     'django_cleanup.apps.CleanupConfig'
 ]
 
