@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'mechaland',
     'authadmin',
-    'django_cleanup.apps.CleanupConfig'
+    'django_cleanup.apps.CleanupConfig',
+    'django_distill',
+    'django_cachekiller',
 ]
 
 MIDDLEWARE = [
@@ -88,10 +90,10 @@ MEDIA_URL = '/back-end-image/'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mechaland',
-        'USER': 'postgres',
-        'PASSWORD': 'sandi123',
-        'HOST': '127.0.0.1',
+        'NAME': 'd2qctv3dcprvqd',
+        'USER': 'gizlagkemvoymd',
+        'PASSWORD': '91cefb9869b29bf3ac6d9e0e363a873f2ea466062f47a7509dbbf373d13bc7d0',
+        'HOST': 'ec2-34-203-182-65.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
