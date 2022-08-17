@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'mechaland',
     'authadmin',
+    'adminpage',
     'django_cleanup.apps.CleanupConfig'
 ]
 

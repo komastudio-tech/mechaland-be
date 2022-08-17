@@ -1,0 +1,80 @@
+{% load static %}
+
+    <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
+        <div class="c-sidebar-brand d-lg-down-none">
+          <svg class="c-sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
+            <use xlink:href="{% static 'assets/brand/coreui.svg#full' %}"></use>
+          </svg>
+          <svg class="c-sidebar-brand-minimized" width="46" height="46" alt="CoreUI Logo">
+            <use xlink:href="{% static 'assets/brand/coreui.svg#signet' %}"></use>
+          </svg>
+        </div>
+        <ul class="c-sidebar-nav">
+          <li class="c-sidebar-nav-title">Feature</li>
+            <li class="c-sidebar-nav-item c-sidebar-nav-dropdown"><a class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle" >
+              <svg class="c-sidebar-nav-icon">
+                <use xlink:href="{% static 'assets/vendors/@coreui/icons/svg/free.svg#cil-face' %}"></use>
+              </svg> Home</a>
+
+                <ul class="c-sidebar-nav-dropdown-items">
+                    <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/heroimg"><span class="c-sidebar-nav-icon"></span> Hero Image</a></li>
+                    <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/home-project"><span class="c-sidebar-nav-icon"></span> Projects</a></li>
+                    <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/seo"><span class="c-sidebar-nav-icon"></span> SEO</a></li>
+                    
+                    </ul>
+            </li>
+
+            <li class="c-sidebar-nav-item c-sidebar-nav-dropdown"><a class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle">
+              <svg class="c-sidebar-nav-icon">
+                <use xlink:href="{% static 'assets/vendors/@coreui/icons/svg/free.svg#cil-face' %}"></use>
+              </svg> About</a>
+
+                <ul class="c-sidebar-nav-dropdown-items">
+                    <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/about"><span class="c-sidebar-nav-icon"></span> About Us</a></li>
+                    <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/focus"><span class="c-sidebar-nav-icon"></span> Our Focus</a></li>
+                    <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/clients"><span class="c-sidebar-nav-icon"></span> Clients</a></li>
+                    
+                    </ul>
+            </li>
+
+            <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/project">
+              <svg class="c-sidebar-nav-icon">
+                <use xlink:href="{% static 'assets/vendors/@coreui/icons/svg/free.svg#cil-file' %}"></use>
+              </svg> Project</a></li>
+
+            <li class="c-sidebar-nav-item c-sidebar-nav-dropdown"><a class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle" href="/contact">
+              <svg class="c-sidebar-nav-icon">
+                <use xlink:href="{% static 'assets/vendors/@coreui/icons/svg/free.svg#cil-house' %}"></use>
+              </svg> Contact</a>
+                <ul class="c-sidebar-nav-dropdown-items">
+                    <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/calculator"><span class="c-sidebar-nav-icon"></span> Calculator</a></li>
+                    <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/calculator-range"><span class="c-sidebar-nav-icon"></span> Calculator Range</a></li>
+                    <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/faq"><span class="c-sidebar-nav-icon"></span> FAQ</a></li>
+                    </ul>
+            </li>
+            <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/footer">
+              <svg class="c-sidebar-nav-icon">
+                <use xlink:href="{% static 'assets/vendors/@coreui/icons/svg/free.svg#cil-file' %}"></use>
+              </svg> Footer</a>
+            </li>
+
+            <li class="c-sidebar-nav-item c-sidebar-nav-dropdown"><a class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle" href="#">
+              <svg class="c-sidebar-nav-icon">
+                <use xlink:href="{% static 'assets/vendors/@coreui/icons/svg/free.svg#cil-star' %}"></use>
+              </svg> Account</a>
+            <ul class="c-sidebar-nav-dropdown-items">
+              <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{% url 'logout' %}?next={{ request.path | urlencode }}" target="_top">
+                  <svg class="c-sidebar-nav-icon">
+                    <use xlink:href="{% static 'assets/vendors/@coreui/icons/svg/free.svg#cil-account-logout' %}"></use>
+                  </svg> Logout</a></li>
+<!--              <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="/register" target="_top">-->
+<!--                  <svg class="c-sidebar-nav-icon">-->
+<!--                    <use xlink:href="{% static 'assets/vendors/@coreui/icons/svg/free.svg#cil-account-logout' %}"></use>-->
+<!--                  </svg> Register</a></li>-->
+            </ul>
+          </li>
+        </ul>
+
+
+        <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent" data-class="c-sidebar-minimized"></button>
+      </div>
