@@ -24,9 +24,9 @@ from mechaland import views as apiViews
 router = routers.DefaultRouter()
 router.register('products', apiViews.ProductViewSet)
 router.register('productimage', apiViews.ProductImageViewSet)
-# router.register('featured_collection', apiViews.FeaturedCollectionViewSet)
+router.register('featured_collection', apiViews.FeaturedCollectionViewSet)
 router.register('interestcheck', apiViews.InterestCheckViewSet)
-# router.register('hero_image', apiViews.HeroImageViewSet)
+router.register('hero_image', apiViews.HeroImageViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
