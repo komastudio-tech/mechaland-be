@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'authadmin',
     'adminpage',
     'django_cleanup.apps.CleanupConfig',
-    'corsheaders'
+    'corsheaders',
     'django_filters',
 ]
 
