@@ -1,0 +1,49 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}Post Form{% endblock %} 
+
+  <!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+{% endblock stylesheets %}
+
+{% block content %}
+<main class="c-main">
+  <div class="container-fluid">
+    <div class="fade-in">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="card">
+            <div class="card-header" style="font-size: 20px; color:white;font-weight: bold;background-color: #2d3b3d;"><i class="fa fa-align-justify"></i> {{formtitle}}</div>
+            <div class="card-body">
+                <form method="POST" enctype="multipart/form-data"> 
+  
+                    <!-- Security token -->
+                    {% csrf_token %} 
+                  
+                    <!-- Using the formset -->
+                    {{ form.as_p }}
+                      <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                          <input class="btn btn-block btn-outline-info" type="submit" value="Submit" >
+                        </div>
+                </form> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+    <!-- Plugins and scripts required by this view-->
+    <script src="{% static 'assets/vendors/@coreui/chartjs/js/coreui-chartjs.bundle.js' %}"></script>
+    <script src="{% static 'assets/vendors/@coreui/utils/js/coreui-utils.js"' %}></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+{% endblock javascripts %}
