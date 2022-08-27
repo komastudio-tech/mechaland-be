@@ -1,7 +1,7 @@
 {% extends "layouts/base.html" %}
 {% load static %}
 
-{% block title %} Hero Image {% endblock %}
+{% block title %} Featured Collection {% endblock %}
 
   <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}
@@ -21,10 +21,10 @@
     <div class="container-fluid">
       <div class="fade-in">
           <div class="row">
-            &nbsp;<button onclick="location.href='/heroimg-add'" class="btn btn-pill btn-success" type="button">
+            &nbsp;<button onclick="location.href='/featured-collection-add'" class="btn btn-pill btn-success" type="button">
                 <svg class="c-icon">
                   <use xlink:href="{% static 'assets/vendors/@coreui/icons/svg/free.svg#cil-library-add' %}"></use>
-                </svg>&nbsp;Tambah Hero Image
+                </svg>&nbsp;Tambah Featured Collection
               </button>
         </div>
         <br>
@@ -38,8 +38,8 @@
                   <h5 class="card-text">{{data.buy_text}}</h5>
                 </div>
                <div class="card-body">
-                    <button onclick="location.href='/heroimg/change/{{data.id}}'" class="btn btn-info" type="button">Ubah</button>
-                    <button onclick="location.href='/heroimg/delete/{{data.id}}'" class="btn btn-danger" type="button">Hapus</button>
+                    <button onclick="location.href='/featured-collection/change/{{data.id}}'" class="btn btn-info" type="button">Ubah</button>
+                    <button onclick="location.href='/featured-collectiondelete/{{data.id}}'" class="btn btn-danger" type="button">Hapus</button>
                 </div>
             </div>
           </div>

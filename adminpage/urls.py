@@ -19,5 +19,11 @@ urlpatterns = [
     path('heroimg/delete/<id>', views.heroimg_delete, name='heroimg-delete'),
     path('heroimg/change/<id>', views.heroimg_change, name='heroimg-change'),
 
+     # HOME --- Featured Collection
+    path('featured-collection', views.featured_collection, name='featured-collection'),
+    path('featured-collection-add', views.featured_collection_add, name='featured-collection-add'),
+    path('featured-collection/delete/<id>', views.featured_collection_delete, name='featured-collection-delete'),
+    path('featured-collection/change/<id>', views.featured_collection_change, name='featured-collection-change'),
+
     
 ]
