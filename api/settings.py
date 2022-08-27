@@ -25,6 +25,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['mechaland-be.herokuapp.com']
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -94,10 +95,10 @@ MEDIA_URL = '/back-end-image/'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mechaland',
-        'USER': 'postgres',
-        'PASSWORD': 'sandi123',
-        'HOST': '127.0.0.1',
+        'NAME': 'd2qctv3dcprvqd',
+        'USER': 'gizlagkemvoymd',
+        'PASSWORD': '91cefb9869b29bf3ac6d9e0e363a873f2ea466062f47a7509dbbf373d13bc7d0',
+        'HOST': 'ec2-34-203-182-65.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -140,10 +141,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
