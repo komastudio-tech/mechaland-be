@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-w1c=81_t^4$@9-t+=r(i+$jvm@&uh#e)%=jvjwgsr^qs1k(tl$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://mechaland-be.herokuapp.com/']
 
 
 # Application definition
@@ -90,10 +90,10 @@ MEDIA_URL = '/back-end-image/'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mechaland',
-        'USER': 'postgres',
-        'PASSWORD': 'sandi123',
-        'HOST': '127.0.0.1',
+        'NAME': 'd2qctv3dcprvqd',
+        'USER': 'gizlagkemvoymd',
+        'PASSWORD': '91cefb9869b29bf3ac6d9e0e363a873f2ea466062f47a7509dbbf373d13bc7d0',
+        'HOST': 'ec2-34-203-182-65.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -136,7 +136,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/sandi/koma/mechaland-be/staticfiles'
+PROJECT_ROOT = os.path.join(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
@@ -144,5 +145,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_STORAGE = (
     'whitenoise.storage.CompressedManifestStaticFilesStorage')
+
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
 
 LOGOUT_REDIRECT_URL = '/'
