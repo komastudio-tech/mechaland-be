@@ -23,8 +23,7 @@ SECRET_KEY = 'django-insecure-w1c=81_t^4$@9-t+=r(i+$jvm@&uh#e)%=jvjwgsr^qs1k(tl$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['mechaland-be.herokuapp.com']
 
 # Application definition
 
@@ -40,9 +39,17 @@ INSTALLED_APPS = [
     'mechaland',
     'authadmin',
     'adminpage',
+    'django_cleanup.apps.CleanupConfig',
+    'corsheaders',
     'django_filters',
-    'django_cleanup.apps.CleanupConfig'
 ]
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000'
+]
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -133,7 +140,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/sandi/koma/mechaland-be/staticfiles'
+
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
@@ -141,5 +151,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_STORAGE = (
     'whitenoise.storage.CompressedManifestStaticFilesStorage')
+
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
 
 LOGOUT_REDIRECT_URL = '/'
