@@ -131,7 +131,7 @@ brotli = ["brotli"]
 [metadata]
 lock-version = "1.1"
 python-versions = "3.8.10"
-content-hash = "a7e65e228c1bebbe93e164ad82eaa92724e211516475dde0a7dbe9e79f15bc3e"
+content-hash = "a00ccaef4f10a9ca00afbb796cb23f7cbbc37ebca3176e8c3a08835596b06da4"
 
 [metadata.files]
 asgiref = []
