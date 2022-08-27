@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'mechaland',
     'authadmin',
     'adminpage',
+    'django_filters',
     'django_cleanup.apps.CleanupConfig'
 ]
 

@@ -1,5 +1,5 @@
 from django import forms
-from django.forms import TextInput, Select, FileInput
+from django.forms import TextInput, Select, FileInput, IntegerField, DateInput
 
 from .models import *
 
@@ -31,8 +31,8 @@ class ProductForm(forms.ModelForm):
             'title': TextInput(attrs={'class': 'form-control'}),
             'description': TextInput(attrs={'class': 'form-control'}),
             'specs': TextInput(attrs={'class': 'form-control'}),
-            'price': IntegerInput(attrs={'class': 'form-control'}),
-            'stock': IntegerInput(attrs={'class': 'form-control'}),
+            'price': TextInput(attrs={'class': 'form-control'}),
+            'stock': TextInput(attrs={'class': 'form-control'}),
             'stock': TextInput(attrs={'class': 'form-control'}),
         }
 
@@ -54,7 +54,7 @@ class InterestCheckForm(forms.ModelForm):
         widgets = {
             'title': TextInput(attrs={'class': 'form-control'}),
             'text': TextInput(attrs={'class': 'form-control'}),
-            'created_at': DateInput(attrs={'class': 'form-control'}),
+            'created_at': DateInput(attrs={'class': 'form-control datetimepicker-input'}),
             'image': FileInput(attrs={'class': 'col-form-label'}),
         }
 
