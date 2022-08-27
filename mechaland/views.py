@@ -1,10 +1,13 @@
 from .models import *
 from .serializers import *
 from rest_framework import viewsets, views, status, generics
+from django_filters.rest_framework import DjangoFilterBackend
 
 class ProductViewSet(viewsets.ModelViewSet):
-    queryset = Product.objects.all()
+    queryset = Product.objects.all().order_by('category')
     serializer_class = ProductSerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['category']
     http_method_names = ['get']
 
 class ProductImageViewSet(viewsets.ModelViewSet):

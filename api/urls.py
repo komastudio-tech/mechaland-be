@@ -31,5 +31,6 @@ router.register('hero_image', apiViews.HeroImageViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include(router.urls)),
+    path("", include("adminpage.urls")),
     path("", include("authadmin.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

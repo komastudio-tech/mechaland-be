@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'adminpage',
     'django_cleanup.apps.CleanupConfig',
     'corsheaders'
+    'django_filters',
 ]
 
 CORS_ALLOWED_ORIGINS = [
