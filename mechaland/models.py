@@ -44,9 +44,10 @@ class Product(models.Model):
          editable = False)
     title = models.CharField(max_length=100, blank=False)
     description = models.CharField(max_length=500, blank=False, verbose_name='Description')
-    specs = models.CharField(max_length=500, blank=False, verbose_name='Specs')
-    price = models.IntegerField()
-    stock = models.IntegerField()
+    has_specs = models.BooleanField(default=False, blank=False)
+    has_variant = models.BooleanField(default=False, blank=False)
+    price = models.IntegerField(blank=True)
+    stock = models.IntegerField(blank=True)
     category = models.CharField(max_length=100, blank=False)
 
     class Meta:
@@ -57,6 +58,38 @@ class Product(models.Model):
     def __str__(self) -> str:
         return self.title
 
+class ProductSpecs(models.Model):
+    id = models.UUIDField( 
+         primary_key = True, 
+         default = uuid.uuid4, 
+         editable = False)
+    specs = models.CharField(max_length=500, blank=False, verbose_name='Specs')
+    product = models.ForeignKey(Product, related_name='list_specs', on_delete=models.CASCADE)
+    class Meta:
+        managed = False
+        db_table = 'product-specs'
+        unique_together=('specs', 'product')
+
+    def __str__(self) -> str:
+        return self.specs
+
+class ProductVariant(models.Model):
+    id = models.UUIDField( 
+         primary_key = True, 
+         default = uuid.uuid4, 
+         editable = False)
+    name = models.CharField(max_length=500, blank=False)
+    variant = models.IntegerField()
+    price = models.IntegerField()
+    stock = models.IntegerField()
+    product = models.ForeignKey(Product, related_name='list_variant', on_delete=models.CASCADE)
+    class Meta:
+        managed = False
+        db_table = 'product-variant'
+        unique_together=('variant', 'product')
+    def __str__(self) -> str:
+        return self.variant
+    
 class ProductImage(models.Model):
     id = models.UUIDField( 
          primary_key = True, 
@@ -82,7 +115,7 @@ class InterestCheck(models.Model):
          editable = False)
     title = models.CharField(max_length=200, blank=False)
     text = models.CharField(max_length=1000, blank=False)
-    created_at = models.DateField(default=datetime.date.today)
+    discord = models.CharField(max_length=1000, blank=True)
     image = models.FileField(upload_to='back-end-image/InterestCheck/', blank = True)
 
     class Meta:
