@@ -66,7 +66,7 @@ class ProductSpecs(models.Model):
     specs = models.CharField(max_length=500, blank=False, verbose_name='Specs')
     product = models.ForeignKey(Product, related_name='list_specs', on_delete=models.CASCADE)
     class Meta:
-        managed = False
+        managed = True
         db_table = 'product-specs'
         unique_together=('specs', 'product')
 
@@ -84,7 +84,7 @@ class ProductVariant(models.Model):
     stock = models.IntegerField()
     product = models.ForeignKey(Product, related_name='list_variant', on_delete=models.CASCADE)
     class Meta:
-        managed = False
+        managed = True
         db_table = 'product-variant'
         unique_together=('variant', 'product')
     def __str__(self) -> str:
