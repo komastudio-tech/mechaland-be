@@ -95,10 +95,10 @@ MEDIA_URL = '/back-end-image/'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd2qctv3dcprvqd',
-        'USER': 'gizlagkemvoymd',
-        'PASSWORD': '91cefb9869b29bf3ac6d9e0e363a873f2ea466062f47a7509dbbf373d13bc7d0',
-        'HOST': 'ec2-34-203-182-65.compute-1.amazonaws.com',
+        'NAME': 'deb5s0tats9tr2',
+        'USER': 'gelrmrxaskiwwc',
+        'PASSWORD': '242fdb93de33fe700b567eb239c5a15136e217c0778655273ef728efffdd482b',
+        'HOST': 'ec2-52-207-90-231.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
