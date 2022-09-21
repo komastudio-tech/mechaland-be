@@ -20,7 +20,7 @@ class ProductSpecsViewSet(viewsets.ModelViewSet):
     serializer_class = ProductSpecsSerializer
     http_method_names = ['get']
 
-class ProductImageViewSet(viewsets.ModelViewSet):
+class ProductVariantViewSet(viewsets.ModelViewSet):
     queryset = ProductVariant.objects.all().order_by('variant').reverse()
     serializer_class = ProductVariantSerializer
     http_method_names = ['get']
