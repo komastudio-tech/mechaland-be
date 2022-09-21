@@ -20,7 +20,7 @@ class ProductSerializer(serializers.ModelSerializer):
     list_photos = ProductImageSerializer(many=True, read_only=True)
     class Meta:
         model = Product
-        fields = ('id','url', 'title','description', 'specs', 'price','stock','category','list_photos', 'list_specs', 'list_variant')
+        fields = ('id','url', 'title','description', 'price','stock','category','list_photos', 'list_specs', 'list_variant')
 
 class InterestCheckSerializer(serializers.ModelSerializer):
     class Meta:
