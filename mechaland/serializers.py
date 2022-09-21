@@ -18,6 +18,8 @@ class ProductVariantSerializer(serializers.ModelSerializer):
 
 class ProductSerializer(serializers.ModelSerializer):
     list_photos = ProductImageSerializer(many=True, read_only=True)
+    list_specs = ProductSpecsSerializer(many=True, read_only=True)
+    list_variant = ProductVariantSerializer(many=True, read_only=True)
     class Meta:
         model = Product
         fields = ('id','url', 'title','description', 'price','stock','category','list_photos', 'list_specs', 'list_variant')
