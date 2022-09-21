@@ -123,4 +123,4 @@ class InterestCheck(models.Model):
         db_table = 'interest-check'
 
     def __str__(self) -> str:
-        return self.name
+        return self.title
