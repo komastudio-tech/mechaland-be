@@ -88,7 +88,7 @@ class ProductVariant(models.Model):
         db_table = 'product-variant'
         unique_together=('variant', 'product')
     def __str__(self) -> str:
-        return self.variant
+        return self.name
     
 class ProductImage(models.Model):
     id = models.UUIDField( 
