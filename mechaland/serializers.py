@@ -27,7 +27,7 @@ class ProductSerializer(serializers.ModelSerializer):
 class InterestCheckSerializer(serializers.ModelSerializer):
     class Meta:
         model = InterestCheck
-        fields = ('id','url', 'title','image', 'text', 'created_at')
+        fields = ('id','url', 'title','image', 'text', 'discord')
 
 class HeroImageSerializer(serializers.ModelSerializer):
     class Meta:
@@ -38,3 +38,8 @@ class FeaturedCollectionSerializer(serializers.ModelSerializer):
     class Meta:
         model = FeaturedCollection
         fields = ('id','url', 'text','buy_text', 'image')
+
+class UpdatesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Updates
+        fields = ('id','url', 'title','text', 'category')

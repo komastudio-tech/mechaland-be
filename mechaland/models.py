@@ -124,3 +124,19 @@ class InterestCheck(models.Model):
 
     def __str__(self) -> str:
         return self.title
+
+class Updates(models.Model):
+    id = models.UUIDField( 
+         primary_key = True, 
+         default = uuid.uuid4, 
+         editable = False)
+    title = models.CharField(max_length=200, blank=False)
+    text = models.CharField(max_length=1000, blank=False)
+    category = models.CharField(max_length=100, blank=False)
+
+    class Meta:
+        managed = True
+        db_table = 'updates'
+
+    def __str__(self) -> str:
+        return self.title

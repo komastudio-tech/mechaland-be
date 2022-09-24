@@ -39,3 +39,8 @@ class FeaturedCollectionViewSet(viewsets.ModelViewSet):
     queryset = FeaturedCollection.objects.all()
     serializer_class = FeaturedCollectionSerializer
     http_method_names = ['get']
+
+class UpdatesViewSet(viewsets.ModelViewSet):
+    queryset = Updates.objects.all()
+    serializer_class = UpdatesSerializer
+    http_method_names = ['get']

@@ -29,6 +29,7 @@ router.register('productvariant', apiViews.ProductVariantViewSet)
 router.register('featured_collection', apiViews.FeaturedCollectionViewSet)
 router.register('interestcheck', apiViews.InterestCheckViewSet)
 router.register('hero_image', apiViews.HeroImageViewSet)
+router.register('updates', apiViews.UpdatesViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
