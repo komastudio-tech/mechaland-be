@@ -1,7 +1,7 @@
 {% extends "layouts/base.html" %}
 {% load static %}
 
-{% block title %} Featured Collection {% endblock %}
+{% block title %} Exhibition {% endblock %}
 
   <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}
@@ -18,13 +18,14 @@
 <!--          </ol>-->
         </div>
 <main class="c-main">
+    <h3>Product {{product.title}}</h3>
     <div class="container-fluid">
       <div class="fade-in">
           <div class="row">
-            &nbsp;<button onclick="location.href='/featured-collection-add'" class="btn btn-pill btn-success" type="button">
+            &nbsp;<button onclick="location.href='/product-specs-add/{{product.id}}'" class="btn btn-pill btn-success" type="button">
                 <svg class="c-icon">
                   <use xlink:href="{% static 'assets/vendors/@coreui/icons/svg/free.svg#cil-library-add' %}"></use>
-                </svg>&nbsp;Tambah Featured Collection
+                </svg>&nbsp;Tambah Specs {{product.title}}
               </button>
         </div>
         <br>
@@ -32,14 +33,12 @@
           {% for data in dataset %}
           <div class="col-sm-5 col-md-3">
             <div class="card">
-              <img src="{{data.image.url}}" class="card-img-top" alt="..."> 
                <div class="card-body">
-                  <h3 class="card-text">{{data.text}}</h3>
-                  <h5 class="card-text">{{data.buy_text}}</h5>
+                  <h5 class="card-text">{{data.specs}}</h5>
                 </div>
                <div class="card-body">
-                    <button onclick="location.href='/featured-collection/change/{{data.id}}'" class="btn btn-info" type="button">Ubah</button>
-                    <button onclick="location.href='/featured-collection/delete/{{data.id}}'" class="btn btn-danger" type="button">Hapus</button>
+                    <button onclick="location.href='/product-specs/change/{{data.id}}'" class="btn btn-info" type="button">Ubah</button>
+                    <button onclick="location.href='/product-specs/delete/{{data.id}}'" class="btn btn-danger" type="button">Hapus</button>
                 </div>
             </div>
           </div>
