@@ -43,6 +43,7 @@ class ProductForm(forms.ModelForm):
         widgets = {
             'title': TextInput(attrs={'class': 'form-control'}),
             'description': TextInput(attrs={'class': 'form-control'}),
+            'link': TextInput(attrs={'class': 'form-control'}),
             'price': TextInput(attrs={'class': 'form-control'}),
             'stock': TextInput(attrs={'class': 'form-control'}),
             'has_specs' : Select(attrs={'class': "form-control"}, choices=true_false),

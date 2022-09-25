@@ -22,7 +22,7 @@ class ProductSerializer(serializers.ModelSerializer):
     list_variant = ProductVariantSerializer(many=True, read_only=True)
     class Meta:
         model = Product
-        fields = ('id','url', 'title','description', 'price','stock','category','list_photos', 'list_specs', 'list_variant')
+        fields = ('id','url', 'title','description', 'price','stock','category','has_variant','has_specs', 'link','list_photos', 'list_specs', 'list_variant')
 
 class InterestCheckSerializer(serializers.ModelSerializer):
     class Meta:

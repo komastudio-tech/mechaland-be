@@ -44,6 +44,7 @@ class Product(models.Model):
          editable = False)
     title = models.CharField(max_length=100, blank=False)
     description = models.CharField(max_length=500, blank=False, verbose_name='Description')
+    link = models.CharField(max_length=500, blank=False)
     has_specs = models.BooleanField(default=False, blank=False)
     has_variant = models.BooleanField(default=False, blank=False)
     price = models.IntegerField(blank=True)
@@ -79,7 +80,7 @@ class ProductVariant(models.Model):
          default = uuid.uuid4, 
          editable = False)
     name = models.CharField(max_length=500, blank=False)
-    variant = models.IntegerField()
+    variant = models.CharField(max_length=500, blank=False)
     price = models.IntegerField()
     stock = models.IntegerField()
     product = models.ForeignKey(Product, related_name='list_variant', on_delete=models.CASCADE)

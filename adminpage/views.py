@@ -206,7 +206,7 @@ def product_change(request, id):
 @login_required(login_url="/login/")
 def product_add(request):
     context={}
-    obj = Product(title="",description="", has_specs="", has_variant="", category="", price="", stock="")
+    obj = Product(title="",description="",link="", has_specs="", has_variant="", category="", price="", stock="")
     form = ProductForm(request.POST or None,request.FILES or None,instance = obj)
     if form.is_valid():
         form.save()
