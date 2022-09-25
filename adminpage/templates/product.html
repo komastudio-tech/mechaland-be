@@ -1,0 +1,99 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %} Product {% endblock %} 
+
+  <!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+{% endblock stylesheets %}
+
+{% block content %}
+<div class="c-subheader px-3">
+          <!-- Breadcrumb-->
+          <ol class="breadcrumb border-0 m-0">
+            <li class="breadcrumb-item" ><a href="/product">Product</a></li>
+
+            <!-- Breadcrumb Menu-->
+          </ol>
+        </div>
+<main class="c-main">
+  <div class="container-fluid">
+    <div class="fade-in">
+      <div class="row">
+        <div class="col-lg-9">
+          <div class="card">
+            <div class="card-header" style="font-size: 20px; color:white;font-weight: bold;background-color: #2d3b3d;"><i class="fa fa-align-justify"></i> List Product</div>
+            <div class="card-body">
+              <table class="table table-responsive-sm">
+                <thead>
+                  <tr>
+                    <th>Judul</th>
+                    <th>Kategori</th>
+                    <th>Deskripsi</th>
+                    <th>Has Variant</th>
+                    <th>Has Specs</th>
+                    <th>Harga</th>
+                    <th>Stok</th>
+                    <th>Detail Image</th>
+                    <th>Ubah</th>
+                    <th>Hapus</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for data in dataset %}
+                  <tr>
+                    <td>{{data.title}}</td>
+                    <td>{{data.category}}</td>
+                    <td>{{data.description}}</td>
+                    {% if data.has_variant %}
+                    <td>
+                      <button onclick="location.href='/product-variant/{{data.id}}'" class="btn btn-pill btn-dark" type="button">Detail Variant</button>
+                    </td>
+                    {% else %}
+                    <td>-</td>
+                    {% endif %}
+                    {% if data.has_specs %}
+                    <td>
+                      <button onclick="location.href='/product-specs/{{data.id}}'" class="btn btn-pill btn-dark" type="button">Detail Specs</button>
+                    </td>
+                    {% else %}
+                    <td>-</td>
+                    {% endif %}
+                    <td>{{data.price}}</td>
+                    <td>{{data.stock}}</td>
+                    <td>
+                    <button onclick="location.href='/product-image/{{data.id}}'" class="btn btn-pill btn-dark" type="button">Detail Image</button>
+                    </td>
+                    <td>
+                      <button onclick="location.href='/product/change/{{data.id}}'" class="btn btn-pill btn-info" type="button">Ubah</button>
+                    </td>
+                    <td>
+                      <button onclick="location.href='/product/delete/{{data.id}}'" class="btn btn-pill btn-danger" type="button">Hapus</button>
+                    </td>
+                  </tr>
+                  {% endfor %} 
+                </tbody>
+              </table>
+              <button onclick="location.href='/product-add'" class="btn btn-pill btn-success" type="button">
+                <svg class="c-icon">
+                  <use xlink:href="{% static 'assets/vendors/@coreui/icons/svg/free.svg#cil-library-add' %}"></use>
+                </svg>&nbsp;Tambah Product
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+    <!-- Plugins and scripts required by this view-->
+    <script src="{% static 'assets/vendors/@coreui/chartjs/js/coreui-chartjs.bundle.js' %}"></script>
+    <script src="{% static 'assets/vendors/@coreui/utils/js/coreui-utils.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+{% endblock javascripts %}

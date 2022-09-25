@@ -1,7 +1,7 @@
 {% extends "layouts/base.html" %}
 {% load static %}
 
-{% block title %} Featured Collection {% endblock %}
+{% block title %} Interest Check {% endblock %}
 
   <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}
@@ -21,10 +21,10 @@
     <div class="container-fluid">
       <div class="fade-in">
           <div class="row">
-            &nbsp;<button onclick="location.href='/featured-collection-add'" class="btn btn-pill btn-success" type="button">
+            &nbsp;<button onclick="location.href='/interest-check-add'" class="btn btn-pill btn-success" type="button">
                 <svg class="c-icon">
                   <use xlink:href="{% static 'assets/vendors/@coreui/icons/svg/free.svg#cil-library-add' %}"></use>
-                </svg>&nbsp;Tambah Featured Collection
+                </svg>&nbsp;Tambah Interest Check
               </button>
         </div>
         <br>
@@ -34,12 +34,14 @@
             <div class="card">
               <img src="{{data.image.url}}" class="card-img-top" alt="..."> 
                <div class="card-body">
-                  <h3 class="card-text">{{data.text}}</h3>
-                  <h5 class="card-text">{{data.buy_text}}</h5>
+                  <h3 class="card-text">{{data.title}}</h3>
+                  <h5 class="card-text">{{data.text}}</h5>
+               </br>
+               <h5 class="card-text">{{data.discord}}</h5>
                 </div>
                <div class="card-body">
-                    <button onclick="location.href='/featured-collection/change/{{data.id}}'" class="btn btn-info" type="button">Ubah</button>
-                    <button onclick="location.href='/featured-collection/delete/{{data.id}}'" class="btn btn-danger" type="button">Hapus</button>
+                    <button onclick="location.href='/interest-check/change/{{data.id}}'" class="btn btn-info" type="button">Ubah</button>
+                    <button onclick="location.href='/interest-check/delete/{{data.id}}'" class="btn btn-danger" type="button">Hapus</button>
                 </div>
             </div>
           </div>

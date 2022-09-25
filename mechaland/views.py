@@ -15,6 +15,16 @@ class ProductImageViewSet(viewsets.ModelViewSet):
     serializer_class = ProductImageSerializer
     http_method_names = ['get']
 
+class ProductSpecsViewSet(viewsets.ModelViewSet):
+    queryset = ProductSpecs.objects.all().reverse()
+    serializer_class = ProductSpecsSerializer
+    http_method_names = ['get']
+
+class ProductVariantViewSet(viewsets.ModelViewSet):
+    queryset = ProductVariant.objects.all().order_by('variant').reverse()
+    serializer_class = ProductVariantSerializer
+    http_method_names = ['get']
+
 class InterestCheckViewSet(viewsets.ModelViewSet):
     queryset = InterestCheck.objects.all()
     serializer_class = InterestCheckSerializer
@@ -28,4 +38,9 @@ class HeroImageViewSet(viewsets.ModelViewSet):
 class FeaturedCollectionViewSet(viewsets.ModelViewSet):
     queryset = FeaturedCollection.objects.all()
     serializer_class = FeaturedCollectionSerializer
+    http_method_names = ['get']
+
+class UpdatesViewSet(viewsets.ModelViewSet):
+    queryset = Updates.objects.all()
+    serializer_class = UpdatesSerializer
     http_method_names = ['get']
