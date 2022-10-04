@@ -43,7 +43,7 @@ class Product(models.Model):
          default = uuid.uuid4, 
          editable = False)
     title = models.CharField(max_length=100, blank=False)
-    description = models.CharField(max_length=500, blank=False, verbose_name='Description')
+    description = models.CharField(max_length=500, blank=True, verbose_name='Description')
     link = models.CharField(max_length=500, blank=False)
     has_specs = models.BooleanField(default=False, blank=False)
     has_variant = models.BooleanField(default=False, blank=False)

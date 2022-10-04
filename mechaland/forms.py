@@ -42,7 +42,6 @@ class ProductForm(forms.ModelForm):
         true_false = ((True, 'Yes'), (False, 'No'))
         widgets = {
             'title': TextInput(attrs={'class': 'form-control'}),
-            'description': TextInput(attrs={'class': 'form-control'}),
             'link': TextInput(attrs={'class': 'form-control'}),
             'price': TextInput(attrs={'class': 'form-control'}),
             'stock': TextInput(attrs={'class': 'form-control'}),
