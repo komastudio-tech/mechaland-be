@@ -11,7 +11,7 @@ class HeroImage(models.Model):
          editable = False)
     text = models.CharField(max_length=500)
     buy_text = models.CharField(max_length=500)
-    image = models.FileField(upload_to='back-end-image/HeroImage/', blank = True)
+    image = models.FileField(upload_to='back-end-image/HeroImage/', blank = False)
 
     class Meta:
         managed = True
@@ -27,7 +27,7 @@ class FeaturedCollection(models.Model):
          editable = False)
     text = models.CharField(max_length=500)
     buy_text = models.CharField(max_length=500)
-    image = models.FileField(upload_to='back-end-image/FeaturedCollection/', blank = True)
+    image = models.FileField(upload_to='back-end-image/FeaturedCollection/', blank = False)
 
     class Meta:
         managed = True
@@ -97,7 +97,7 @@ class ProductImage(models.Model):
          default = uuid.uuid4, 
          editable = False)
     name = models.CharField(max_length=500, blank=False)
-    image = models.FileField(upload_to='back-end-image/ProductImage/', blank = True)
+    image = models.FileField(upload_to='back-end-image/ProductImage/', blank = False)
     ranking = models.IntegerField()
     product = models.ForeignKey(Product, related_name='list_photos', on_delete=models.CASCADE)
 
@@ -117,7 +117,7 @@ class InterestCheck(models.Model):
     title = models.CharField(max_length=200, blank=False)
     text = models.CharField(max_length=1000, blank=False)
     discord = models.CharField(max_length=1000, blank=True)
-    image = models.FileField(upload_to='back-end-image/InterestCheck/', blank = True)
+    image = models.FileField(upload_to='back-end-image/InterestCheck/', blank = False)
 
     class Meta:
         managed = True
