@@ -47,8 +47,8 @@ class Product(models.Model):
     link = models.CharField(max_length=500, blank=False)
     has_specs = models.BooleanField(default=False, blank=False)
     has_variant = models.BooleanField(default=False, blank=False)
-    price = models.IntegerField(blank=True)
-    stock = models.IntegerField(blank=True)
+    price = models.IntegerField(default=0, blank=False)
+    stock = models.IntegerField(default=0, blank=False)
     category = models.CharField(max_length=100, blank=False)
 
     class Meta:
@@ -115,8 +115,8 @@ class InterestCheck(models.Model):
          default = uuid.uuid4, 
          editable = False)
     title = models.CharField(max_length=200, blank=False)
-    text = models.CharField(max_length=1000, blank=False)
-    discord = models.CharField(max_length=1000, blank=True)
+    price = models.IntegerField(default=0, blank=False)
+    discord = models.CharField(max_length=1000, blank=False)
     image = models.FileField(upload_to='back-end-image/InterestCheck/', blank = False)
 
     class Meta:
