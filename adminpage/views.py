@@ -163,7 +163,7 @@ def interest_check_change(request, id):
 @login_required(login_url="/login/")
 def interest_check_add(request):
     context={}
-    obj = InterestCheck(title="",text="", discord="", image="")
+    obj = InterestCheck(title="",price="", discord="", image="")
     form = InterestCheckForm(request.POST or None,request.FILES or None,instance = obj)
     if form.is_valid():
         form.save()
@@ -199,7 +199,9 @@ def product_change(request, id):
     if form.is_valid():
         form.save()
         return redirect('/product')
-    context['form'] = form
+    conte    context['form'] = form
+    context['formtitle'] = 'Ubah Product'
+xt['form'] = form
     context['formtitle'] = 'Ubah Product'
     return render(request, "forms-change.html", context)
 

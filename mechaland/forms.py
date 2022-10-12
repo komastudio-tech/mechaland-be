@@ -85,10 +85,10 @@ class ProductVariantForm(forms.ModelForm):
 class InterestCheckForm(forms.ModelForm):
     class Meta:
         model = InterestCheck
-        fields = ['title','text', 'discord', 'image']
+        fields = ['title','price', 'discord', 'image']
         widgets = {
             'title': TextInput(attrs={'class': 'form-control'}),
-            'text': TextInput(attrs={'class': 'form-control'}),
+            'price': TextInput(attrs={'class': 'form-control'}),
             'discord': TextInput(attrs={'class': 'form-control'}),
             'image': FileInput(attrs={'class': 'col-form-label'}),
         }
