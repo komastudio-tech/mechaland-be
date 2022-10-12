@@ -201,8 +201,6 @@ def product_change(request, id):
         return redirect('/product')
     context['form'] = form
     context['formtitle'] = 'Ubah Product'
-xt['form'] = form
-    context['formtitle'] = 'Ubah Product'
     return render(request, "forms-change.html", context)
 
 @login_required(login_url="/login/")
