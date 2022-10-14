@@ -46,7 +46,8 @@ INSTALLED_APPS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000'
+    'https://deploy-preview-1--soft-palmier-a96174.netlify.app/',
+    'https://mechaland.id'
 ]
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
