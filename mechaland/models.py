@@ -1,6 +1,7 @@
 from django.db import models
 import uuid
 import datetime
+from django.core.validators import MaxValueValidator, MinValueValidator 
 
 # Create your models here.
 # HOME
@@ -47,7 +48,7 @@ class Product(models.Model):
     link = models.CharField(max_length=500, blank=False)
     has_specs = models.BooleanField(default=False, blank=False)
     has_variant = models.BooleanField(default=False, blank=False)
-    price = models.IntegerField(default=0, blank=False)
+    price = models.IntegerField(default=1, blank=False,validators=[MinValueValidator(1)])
     stock = models.IntegerField(default=0, blank=False)
     category = models.CharField(max_length=100, blank=False)
 
@@ -81,7 +82,7 @@ class ProductVariant(models.Model):
          editable = False)
     name = models.CharField(max_length=500, blank=False)
     variant = models.CharField(max_length=500, blank=False)
-    price = models.IntegerField()
+    price = models.IntegerField(default=1, blank=False,validators=[MinValueValidator(1)])
     stock = models.IntegerField()
     product = models.ForeignKey(Product, related_name='list_variant', on_delete=models.CASCADE)
     class Meta:
@@ -115,7 +116,7 @@ class InterestCheck(models.Model):
          default = uuid.uuid4, 
          editable = False)
     title = models.CharField(max_length=200, blank=False)
-    price = models.IntegerField(default=0, blank=False)
+    price = models.IntegerField(default=1, blank=False,validators=[MinValueValidator(1)])
     discord = models.CharField(max_length=1000, blank=False)
     image = models.FileField(upload_to='back-end-image/InterestCheck/', blank = False)
 

@@ -11,17 +11,17 @@ class ProductViewSet(viewsets.ModelViewSet):
     http_method_names = ['get']
 
 class ProductImageViewSet(viewsets.ModelViewSet):
-    queryset = ProductImage.objects.all().order_by('ranking').reverse()
+    queryset = ProductImage.objects.all().order_by('ranking')
     serializer_class = ProductImageSerializer
     http_method_names = ['get']
 
 class ProductSpecsViewSet(viewsets.ModelViewSet):
-    queryset = ProductSpecs.objects.all().reverse()
+    queryset = ProductSpecs.objects.all()
     serializer_class = ProductSpecsSerializer
     http_method_names = ['get']
 
 class ProductVariantViewSet(viewsets.ModelViewSet):
-    queryset = ProductVariant.objects.all().order_by('variant').reverse()
+    queryset = ProductVariant.objects.all().order_by('variant')
     serializer_class = ProductVariantSerializer
     http_method_names = ['get']
 

@@ -187,13 +187,13 @@ def interest_check_delete(request, id):
 @login_required(login_url="/login/")
 def product(request):
     context={}
-    context["dataset"] = Product.objects.all().order_by('category')
+    context["dataset"] = Product.objects.all()
     return render(request, "product.html", context)
 
 @login_required(login_url="/login/")
 def product_change(request, id):
     context={}
-    product = Product.objects.get(id=id)
+    product = Product.objects.get(id=id).
     obj = product
     form = ProductForm(request.POST or None,request.FILES or None, instance = obj)
     if form.is_valid():
