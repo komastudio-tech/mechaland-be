@@ -193,7 +193,7 @@ def product(request):
 @login_required(login_url="/login/")
 def product_change(request, id):
     context={}
-    product = Product.objects.get(id=id).
+    product = Product.objects.get(id=id)
     obj = product
     form = ProductForm(request.POST or None,request.FILES or None, instance = obj)
     if form.is_valid():
