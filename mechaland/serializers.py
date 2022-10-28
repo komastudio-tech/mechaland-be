@@ -27,7 +27,7 @@ class ProductSerializer(serializers.ModelSerializer):
 class InterestCheckSerializer(serializers.ModelSerializer):
     class Meta:
         model = InterestCheck
-        fields = ('id','url', 'title','image', 'discord')
+        fields = ('id','url', 'title','image', 'price', 'discord')
 
 class HeroImageSerializer(serializers.ModelSerializer):
     class Meta:
