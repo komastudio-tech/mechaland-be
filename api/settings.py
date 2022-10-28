@@ -23,7 +23,8 @@ SECRET_KEY = 'django-insecure-w1c=81_t^4$@9-t+=r(i+$jvm@&uh#e)%=jvjwgsr^qs1k(tl$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['api.mechaland.id', '167.172.78.32', 'http://localhost:8000']
+# ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -46,16 +47,23 @@ INSTALLED_APPS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'https://deploy-preview-1--soft-palmier-a96174.netlify.app/',
-    'https://mechaland.id'
+    'http://localhost:3000',
+    'https://mechaland.id',
+    'https://www.mechaland.id',
+    'localhost:3000',
+    'mechaland.id',
+    'www.mechaland.id',
+    "http://localhost:3000"
 ]
+#CORS_ALLOW_ALL_ORIGINS = True
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-SECURE_SSL_REDIRECT = True
+#SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+#SECURE_SSL_REDIRECT = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -96,10 +104,10 @@ MEDIA_URL = '/back-end-image/'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'deb5s0tats9tr2',
-        'USER': 'gelrmrxaskiwwc',
-        'PASSWORD': '242fdb93de33fe700b567eb239c5a15136e217c0778655273ef728efffdd482b',
-        'HOST': 'ec2-52-207-90-231.compute-1.amazonaws.com',
+        'NAME': 'mechaland_db',
+        'USER': 'mechaland_admin',
+        'PASSWORD': 'mechaland_pass',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
