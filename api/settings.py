@@ -23,8 +23,8 @@ SECRET_KEY = 'django-insecure-w1c=81_t^4$@9-t+=r(i+$jvm@&uh#e)%=jvjwgsr^qs1k(tl$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['api.mechaland.id', '167.172.78.32', 'http://localhost:8000']
-# ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['api.mechaland.id', '167.172.78.32', 'localhost:8000']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -50,9 +50,6 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'https://mechaland.id',
     'https://www.mechaland.id',
-    'localhost:3000',
-    'mechaland.id',
-    'www.mechaland.id',
     "http://localhost:3000"
 ]
 #CORS_ALLOW_ALL_ORIGINS = True
