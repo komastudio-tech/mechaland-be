@@ -46,7 +46,7 @@ INSTALLED_APPS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'https://deploy-preview-1--soft-palmier-a96174.netlify.app/',
+    'https://deploy-preview-1--soft-palmier-a96174.netlify.app',
     'https://mechaland.id'
 ]
 
@@ -61,7 +61,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middngsleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'api.urls'
