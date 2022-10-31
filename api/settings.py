@@ -23,6 +23,7 @@ SECRET_KEY = 'django-insecure-w1c=81_t^4$@9-t+=r(i+$jvm@&uh#e)%=jvjwgsr^qs1k(tl$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# ALLOWED_HOSTS = ['api.mechaland.id', '167.172.78.32', 'localhost:8000']
 ALLOWED_HOSTS = ['*']
 
 
@@ -47,15 +48,20 @@ INSTALLED_APPS = [
 
 CORS_ALLOWED_ORIGINS = [
     'https://deploy-preview-1--soft-palmier-a96174.netlify.app',
-    'https://mechaland.id'
+    'http://localhost:3000',
+    'https://mechaland.id',
+    'https://www.mechaland.id',
+    "http://localhost:3000"
 ]
+#CORS_ALLOW_ALL_ORIGINS = True
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-SECURE_SSL_REDIRECT = True
+#SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+#SECURE_SSL_REDIRECT = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
