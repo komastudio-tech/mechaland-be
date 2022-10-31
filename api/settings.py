@@ -102,10 +102,10 @@ MEDIA_URL = '/back-end-image/'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'deb5s0tats9tr2',
-        'USER': 'gelrmrxaskiwwc',
-        'PASSWORD': '242fdb93de33fe700b567eb239c5a15136e217c0778655273ef728efffdd482b',
-        'HOST': 'ec2-52-207-90-231.compute-1.amazonaws.com',
+        'NAME': 'mechaland_db',
+        'USER': 'mechaland_admin',
+        'PASSWORD': 'mechaland_pass',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
