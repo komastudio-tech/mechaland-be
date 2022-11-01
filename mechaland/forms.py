@@ -37,7 +37,7 @@ class UpdatesForm(forms.ModelForm):
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = ['title','link', 'has_specs', 'has_variant', 'price', 'stock', 'category']
+        fields = ['title','link', 'link_source', 'has_specs', 'has_variant', 'price', 'stock', 'category']
         kategori = (('In Stock', 'In Stock'),('Live', 'Live'),('Preorder', 'Preorder'),('Groupbuy', 'Groupbuy'))
         link_source = (("DISCORD", "Discord"), ("TOKOPEDIA", "Tokopedia"))
         true_false = ((True, 'Yes'), (False, 'No'))
