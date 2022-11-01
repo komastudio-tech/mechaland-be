@@ -39,10 +39,12 @@ class ProductForm(forms.ModelForm):
         model = Product
         fields = ['title','link', 'has_specs', 'has_variant', 'price', 'stock', 'category']
         kategori = (('In Stock', 'In Stock'),('Live', 'Live'),('Preorder', 'Preorder'),('Groupbuy', 'Groupbuy'))
+        link_source = (("DISCORD", "Discord"), ("TOKOPEDIA", "Tokopedia"))
         true_false = ((True, 'Yes'), (False, 'No'))
         widgets = {
             'title': TextInput(attrs={'class': 'form-control'}),
             'link': TextInput(attrs={'class': 'form-control'}),
+            'link_source': Select(attrs={'class': "form-control"}, choices=link_source),
             'price': TextInput(attrs={'class': 'form-control'}),
             'stock': TextInput(attrs={'class': 'form-control'}),
             'has_specs' : Select(attrs={'class': "form-control"}, choices=true_false),

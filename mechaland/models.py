@@ -46,6 +46,7 @@ class Product(models.Model):
     title = models.CharField(max_length=100, blank=False)
     description = models.CharField(max_length=500, blank=True, verbose_name='Description')
     link = models.CharField(max_length=500, blank=False)
+    link_source = models.CharField(max_length=128, default="TOKOPEDIA")
     has_specs = models.BooleanField(default=False, blank=False)
     has_variant = models.BooleanField(default=False, blank=False)
     price = models.IntegerField(default=1, blank=False,validators=[MinValueValidator(1)])
